@@ -1,4 +1,4 @@
-import { API_BASE_URL, POLL_LIST_SIZE, ACCESS_TOKEN, MY_API_URL} from '../constants';
+import { API_BASE_URL, ACCESS_TOKEN, MY_API_URL} from '../constants';
 
 
 const request = (options) => {

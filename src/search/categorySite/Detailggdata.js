@@ -4,6 +4,8 @@ import Pagination from "react-js-pagination";
 import SearchDetail from '../SearchDetail';
 import '../Search.css';
 import Footer from '../../common/Footer';
+import {MY_CRAW_URL} from '../../constants'
+
 
 class Detailggdata extends React.Component {
 
@@ -23,7 +25,7 @@ class Detailggdata extends React.Component {
 
   fetchURL(page) {
 
-    axios.get(`http://localhost:8013/seouldatadb/detail?location=%ea%b2%bd%ea%b8%b0%eb%8d%b0%ec%9d%b4%ed%84%b0%eb%93%9c%eb%a6%bc&page=${page}&size=7`)
+    axios.get(MY_CRAW_URL + `/seouldatadb/detail?location=%ea%b2%bd%ea%b8%b0%eb%8d%b0%ec%9d%b4%ed%84%b0%eb%93%9c%eb%a6%bc&page=${page}&size=7`)
       .then( response => {
 
         const totalPages = response.data.totalPages;

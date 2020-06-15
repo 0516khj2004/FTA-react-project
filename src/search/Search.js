@@ -4,6 +4,7 @@ import SearchDetail from './SearchDetail'
 import axios from 'axios';
 import Pagination from "react-js-pagination";
 import Footer from '../common/Footer'
+import {MY_CRAW_URL} from '../constants'
 class Search extends Component {
 
     constructor(props) {
@@ -22,7 +23,7 @@ class Search extends Component {
 
     fetchURL(page) {
 
-        axios.get(`http://localhost:8013/seouldatadb/articles?page=${page}&size=10`)
+        axios.get( MY_CRAW_URL + `/seouldatadb/articles?page=${page}&size=10`)
             .then(response => {
 
                 const totalPages = response.data.totalPages;
