@@ -5,7 +5,7 @@
   .app-title a {
     text-decoration: none;
     line-height: 64px;
-    font-size: 21px;
+    font-size: 28px;
     display: inline-block;
   }
   
@@ -43,7 +43,7 @@
   }
 
   .profile-menu .user-full-name-info {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 600;
     color: rgba(0,0,0,0.85);
   }

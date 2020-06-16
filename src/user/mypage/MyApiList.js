@@ -4,12 +4,15 @@ import "./MyApiList.css"
 import TableDelete from './TableDelete'
 import ServerStart from "../../Open/ServerStart"
 import { Button } from 'reactstrap';
-
+import { ListGroup, ListGroupItem, UncontrolledCollapse } from 'reactstrap';
+import { faBackspace } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 export default class MyApiList extends Component {
 
   constructor(props) {
@@ -58,10 +61,17 @@ export default class MyApiList extends Component {
     })
   }
 
+
   render() {
     // console.log("REDERING.........", this.state.apilistinfo);
     const apilistinfo = this.state.apilistinfo;
     const userkey = this.props.userkey;
+    const tname = "{tablename}";
+    const kname = "{userkey}"
+    const dname = "{column}={value}"
+    const uname = "{userid}"
+    const tableinfo = "tableinfo"
+
     // console.log(userkey)
     return (
       <div className="container ftco-animate ">
@@ -89,7 +99,24 @@ export default class MyApiList extends Component {
             </div>
           </div>
         ))}
-        <Button onClick={this.handleClickOpen} className=" user-api-button" color="danger">나만의 API SERVER 종료</Button>
+        <Button id="toggler" className="btn-test">
+          REST API DOCS
+        </Button>
+        <UncontrolledCollapse  toggler="#toggler">
+        <ListGroup >
+        <div className="info"><FontAwesomeIcon icon={faSearch} size="1x" />&nbsp;테이블 목록 조회</div>
+          <ListGroupItem tag="h5" color="info"><Button color="info" className="btn-get">GET</Button>&nbsp;&nbsp;  /{uname}/{tableinfo}</ListGroupItem>
+          <div className="info"><FontAwesomeIcon icon={faSearch} size="1x" />&nbsp;테이블 별 데이터 전체 조회</div>
+          <ListGroupItem tag="h5" color="info"><Button color="info" className="btn-get">GET</Button>&nbsp;&nbsp;  /{tname}?key={kname}</ListGroupItem>
+          <div className="info"><FontAwesomeIcon icon={faSearch} size="1x" />&nbsp; 테이블 별 특정 칼럼 값 조회</div>
+          <ListGroupItem tag="h5" color="info"><Button color="info" className="btn-get">GET</Button>&nbsp;&nbsp;/{tname}/detail?key={kname}&amp;{dname}&amp;...
+          </ListGroupItem>
+          <div className="info"><FontAwesomeIcon icon={faBackspace} size="1x" />&nbsp; 테이블 삭제</div>
+          <ListGroupItem tag="h5" color="danger"><Button color="danger" className="btn-get">DELETE</Button>&nbsp;&nbsp;/{tname}/delete?key={kname}
+          </ListGroupItem>
+        </ListGroup>
+        </UncontrolledCollapse>
+        <Button onClick={this.handleClickOpen} className="user-api-button" color="danger">나만의 API SERVER 종료</Button>
         <Dialog
           Dialog onClose={this.handleClose} open={this.state.open}
           aria-labelledby="alert-dialog-title"

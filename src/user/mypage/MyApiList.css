@@ -70,4 +70,36 @@
     float: right;
     cursor: pointer;
   }
+  .info{
+    font-family: "Titillium Web", sans-serif;
+    /* background-color: red; */
+    font-size: 17px;
+    margin: 5px;
+    color: #000000;
+  }
+  .btn-get{
+    font-size: 14px;
+    font-weight: 700;
+    min-width: 80px;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px;
+    font-family: "Titillium Web", sans-serif;
+    color: rgb(255, 255, 255);
+    padding: 6px 15px;
+    border-radius: 3px;
+  }
+  .btn-test{
+    font-family: "Titillium Web", sans-serif;
+    background-color: #ffffff;
+    color: #000;
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
+    border-bottom-width: 2px;
+    border-bottom-color: #;
+    border-top-color: #fff;
+    border-left-color: #fff;
+    border-right-color: #fff;
+    /* border-color: #fff; */
+  }
 

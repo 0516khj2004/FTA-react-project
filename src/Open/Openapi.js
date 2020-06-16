@@ -36,18 +36,18 @@ const ModalExample = (props) => {
   }
 
   return (
-    <div>
-      <Button className="openbtn"  outline color="danger" size="lg" onClick={serviceStart}>Open-API 서비스 시작</Button>
+    <div className="btn-container">
+      <Button className="openbtn"  outline color="danger" size="lg" onClick={serviceStart}>My API 서버 시작</Button>
       <Modal isOpen={modal} modalTransition={{ timeout: 500 }} backdropTransition={{ timeout: 800 }}
         toggle={toggle} >
-        <ModalHeader toggle={toggle}> OPEN API 서비스 시작</ModalHeader>
+        <ModalHeader toggle={toggle}> My API 서비스 시작</ModalHeader>
         <ModalBody>
             {props.userfiles}
             파일로 api 서비스를 생성합니다.
         </ModalBody>
         <ModalFooter>
         <CircularProgress variant="determinate"/>
-          <Button color="primary" onClick={openupload} >API START
+          <Button color="primary" onClick={openupload} >My API 서비스 시작
           </Button>{' '}
           <Button color="secondary" onClick={toggle}>Cancel</Button>
         </ModalFooter>

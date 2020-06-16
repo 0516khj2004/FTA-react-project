@@ -9,6 +9,8 @@ import Footer from '../common/Footer'
 import { faUpload } from '@fortawesome/free-solid-svg-icons';
 import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Spinner } from 'reactstrap';
+
 
 export default class UploadFiles extends Component {
   constructor(props) {
@@ -152,34 +154,9 @@ export default class UploadFiles extends Component {
             </div>
           </div>
         </div>
-        <div className='container' style={{ width: "600px" }}>
-          {/* <div style={{ margin: "30px"}}>
-            <h3>원하는 파일을 업로드 해주세요</h3>
-          </div> */}
-          <div>
-          
-
-            <div class="file-container">
-              <div class="file-wrapper">
-                <input class="file-input" type="file" onChange={this.selectFile} />
-                <div class="file-content">
-                  <div class="file-infos">
-                    <p class="file-icon"><FontAwesomeIcon className="t1" icon={faUpload} size="5x" /></p>
-                  </div>
-                  <p className="file-name"><span class="has-drag">Click to browse<span class="has-drag">or drop file here</span></span></p>
-                 
-                </div>
-              </div>
-            </div>
-            {/* 
-            <label className="file_input">
-              <input type="file" onChange={this.selectFile} />
-            </label> */}
-            <div className="wrapper">
-             <button className="btn btn-primary upload-btn" disabled={!selectedFiles} onClick={this.upload}>
-              Upload
-            </button>
-             {currentFile && (
+        <div className='container'>
+          <div class='container'>
+            {currentFile && (
               <div className="progress slider">
                 <div
                   className="progress-bar progress-bar-info progress-bar-striped"
@@ -193,27 +170,40 @@ export default class UploadFiles extends Component {
                         </div>
               </div>
             )}
+            <div class="row">
+              <div class="col file-container">
+                <div class="file-wrapper">
+                  <input class="file-input" type="file" onChange={this.selectFile} />
+                  <div class="file-content">
+                    <div class="file-infos">
+                      <p class="file-icon"><FontAwesomeIcon className="t1" icon={faUpload} size="8x" /></p>
+                    </div>
+                    <p className="file-name"><span class="has-drag">Click to browse<span class="has-drag">or drop file here</span></span></p>
+                  </div>
+                </div>
+                <div className="wrapper">
+                  <button className="btn btn-primary upload-btn" disabled={!selectedFiles} onClick={this.upload}>
+                    Upload
+                  </button>
+                  <div className="alert alert-light" role="alert">
+                    {message}
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <div className="card-header">List of Files</div>
+                  <ul className="list-group list-group-flush">
+                    {uploadfilename &&
+                      uploadfilename.map((filename, index) => (
+                        <li className="list-group-item" key={index}>
+                          <Spinner type="grow" color="warning" /><span className="filename">{filename}</span>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
             </div>
-           
-            {/* <button className="btn btn-danger" onClick={this.delete}>
-                    All Delete
-                    </button> */}
-
-            <div className="alert alert-light" role="alert">
-              {message}
-            </div>
-            <div className="card">
-              <div className="card-header">List of Files</div>
-              <ul className="list-group list-group-flush">
-                {uploadfilename &&
-                  uploadfilename.map((filename, index) => (
-                    <li className="list-group-item" key={index}>
-                      {filename}
-                    </li>
-                  ))}
-              </ul>
-            </div>
-
             <Openapi
               userfiles={uploadfilename &&
                 uploadfilename.map((filename, index) => (
@@ -227,7 +217,6 @@ export default class UploadFiles extends Component {
             </Openapi>
           </div>
         </div>
-        <div></div>
         <Footer />
       </div>
     );

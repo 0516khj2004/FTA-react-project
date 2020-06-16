@@ -12,6 +12,8 @@ import MyApiList from '../mypage/MyApiList';
 import { UncontrolledCollapse, Button, CardBody, Card } from 'reactstrap';
 import ServerStart from "../../Open/ServerStart"
 
+import Footer from '../../common/Footer'
+
 const TabPane = Tabs.TabPane;
 
 class Profile extends Component {
@@ -129,12 +131,11 @@ class Profile extends Component {
                                                 </Card>
                                                 </UncontrolledCollapse>
                                             </div>
-                                           
-                                            <Button onClick={this.apiDown} className="user-api-button" color="danger">OPEN API 종료</Button>    
                                         </div>
                                     </TabPane>
                                 </Tabs>
                             </div>  
+                            <Footer />
                         </div>  
                     ): null               
                 }
