@@ -37,14 +37,14 @@ export default class UploadFiles extends Component {
 
     UploadService.delete(username);
 
-    UploadService.getFiles(username).then((files) => {
+    // UploadService.getFiles(username).then((files) => {
 
-      this.setState({
-        message: files.data.message,
-        fileInfos: files.date
-      });
-      return UploadService.getFiles(username)
-    });
+    //   this.setState({
+    //     message: files.data.message,
+    //     fileInfos: files.date
+    //   });
+    //   return UploadService.getFiles(username)
+    // });
 
     // UploadService.getFiles(username).then((response) => {
 
@@ -82,7 +82,7 @@ export default class UploadFiles extends Component {
           message: response.data.message,
           filename: response.data.filename
         });
-        return UploadService.getFiles(username, console.log("<<<" + username));
+        // return UploadService.getFiles(username, console.log("<<<" + username));
       })
       .then((files) => {
         this.setState({
@@ -108,14 +108,14 @@ export default class UploadFiles extends Component {
     let username = this.props.currentUser.username;
     UploadService.delete(username);
 
-    UploadService.getFiles(username).then((files) => {
+    // UploadService.getFiles(username).then((files) => {
 
-      this.setState({
-        message: files.data.message,
-        fileInfos: files.date
-      });
-      return UploadService.getFiles(username)
-    });
+    //   this.setState({
+    //     message: files.data.message,
+    //     fileInfos: files.date
+    //   });
+    //   return UploadService.getFiles(username)
+    // });
   }
 
 
