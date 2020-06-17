@@ -58,7 +58,7 @@ class Footer extends React.Component {
               <div class="ftco-footer-widget mb-4 ml-md-4">
                 <h2 class="ftco-heading-2">개인정보분야별책임자</h2>
                 <ul class="list-unstyled">
-                  <li><a href="#" class="pb-1 d-block">윤종필</a></li>
+                  <li><a href="#" class="pb-1 d-block"></a></li>
                 </ul>
               </div>
             </div>
