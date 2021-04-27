@@ -22,7 +22,7 @@
     "react-scripts": "1.1.5",
     "react-viewer": "^3.2.1",
     "reactstrap": "^8.4.1",
-    "redis": "^3.0.2"
+    "redis": "^3.1.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
